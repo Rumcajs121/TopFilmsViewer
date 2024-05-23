@@ -1,11 +1,15 @@
 ﻿using DomainLayer;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography.X509Certificates;
 
 namespace InfrastructureLayer;
 
 public class TopFilmsDbContext : DbContext
 {
-
+    public TopFilmsDbContext(DbContextOptions<TopFilmsDbContext> options): base(options)
+    {
+        
+    }
     public DbSet<Movie> Movies { get; set; }
     public DbSet<Studio> Studios { get; set; }
     public DbSet<Trailer> Trailers { get; set; }
@@ -37,10 +41,5 @@ public class TopFilmsDbContext : DbContext
             .WithOne(x => x.Movie)
             .HasForeignKey<Trailer>(c => c.MovieId);
         });
-    }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        optionsBuilder.UseSqlite(@"Data Source=/Users/alonaohii/Desktop/GitHub/TopFilmsViewer/InfrastructureLayer/Data/TopFilmsViewerDb.db;");
-
     }
 }
