@@ -2,7 +2,7 @@ using InfrastructureLayer;
 using Microsoft.EntityFrameworkCore;
 using TopFilmsViewer.Client.Pages;
 using TopFilmsViewer.Components;
-using InfrastructureLayer.Extensions;
+
 
 var builder = WebApplication.CreateBuilder(args);
 

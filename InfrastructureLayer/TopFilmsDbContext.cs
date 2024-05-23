@@ -1,6 +1,5 @@
 ﻿using DomainLayer;
 using Microsoft.EntityFrameworkCore;
-using System.Security.Cryptography.X509Certificates;
 
 namespace InfrastructureLayer;
 
@@ -16,6 +15,7 @@ public class TopFilmsDbContext : DbContext
     public DbSet<Genre> Genres { get; set; }
     public DbSet<Comment> Comments { get; set; }
     public DbSet<Photo> Photos { get; set; }
+    public DbSet<User> Users { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
 
@@ -41,5 +41,11 @@ public class TopFilmsDbContext : DbContext
             .WithOne(x => x.Movie)
             .HasForeignKey<Trailer>(c => c.MovieId);
         });
+        modelBuilder.Entity<Comment>(eb=>{
+            eb.HasOne(w=>w.Users)
+            .WithMany(x=>x.Comments)
+            .HasForeignKey(c=>c.UserId);
+        });
+
     }
 }

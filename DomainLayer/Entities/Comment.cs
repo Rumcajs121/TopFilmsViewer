@@ -8,8 +8,8 @@ public class Comment
     public DateTime DateCreated { get; set; }
     public int Note { get; set; }
 
-    public Movie MovieId { get; set; }
+    public int MovieId { get; set; }
     public Movie Movie  { get; set; }
-
-    
+    public int UserId { get; set; }
+    public User Users { get; set; }
 }
