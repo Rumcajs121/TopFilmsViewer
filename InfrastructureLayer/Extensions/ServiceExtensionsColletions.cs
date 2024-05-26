@@ -1,4 +1,6 @@
-﻿using DomainLayer;
+﻿using ApplicationLayer;
+using DomainLayer;
+using InfrastructureLayer.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

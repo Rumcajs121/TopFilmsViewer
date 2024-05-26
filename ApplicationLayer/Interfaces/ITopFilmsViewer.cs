@@ -1,8 +1,7 @@
-﻿using ApplicationLayer;
-
-namespace DomainLayer;
+﻿namespace ApplicationLayer;
 
 public interface ITopFilmsViewer
 {
     Task<List<MainPageMovieDto>> GetAllMovies();
 }
+

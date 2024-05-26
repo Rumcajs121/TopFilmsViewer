@@ -7,6 +7,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="Interfaces/ITopFilmsViewer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\DomainLayer\DomainLayer.csproj" />
   </ItemGroup>
 

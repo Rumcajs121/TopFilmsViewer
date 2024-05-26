@@ -3,7 +3,7 @@ using AutoMapper;
 using DomainLayer;
 using Microsoft.EntityFrameworkCore;
 
-namespace InfrastructureLayer;
+namespace InfrastructureLayer.Repository;
 
 public class TopFilmsViewerRepository : ITopFilmsViewer
 {

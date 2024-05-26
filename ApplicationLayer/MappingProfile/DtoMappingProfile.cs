@@ -14,13 +14,3 @@ public class DtoMappingProfile : Profile
         .ForMember(dest=>dest.Studio, opt=>opt.MapFrom(src=>src.Studios.StudioName));
     }
 }
-
-
-// public class MainPageMovieDto
-// {
-//     public  string Title { get; set; }
-//     public string Director { get; set; }
-//     public string  MiniaturePhoto { get; set; }
-//     public string Genre { get; set; }
-//     public string Studio { get; set; }
-// }
