@@ -6,7 +6,7 @@ public class Comment:UniqueId
 {
     public required Guid CommentId { get; set; }
     public required string Opinion { get; set; }
-    public DateTime DateCreated { get; set; }
+    public required string DateCreated { get; set; }
     public int Note { get; set; }
 
     public int MovieId { get; set; }

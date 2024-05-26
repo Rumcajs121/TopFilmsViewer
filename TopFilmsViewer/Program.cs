@@ -12,7 +12,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
 
-//Db
+//Db Data
 builder.Services.AddInfrastructure(builder.Configuration);
 //DI Services
 builder.Services.AddApplication();

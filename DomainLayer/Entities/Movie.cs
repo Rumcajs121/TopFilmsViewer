@@ -4,7 +4,7 @@ public class Movie : UniqueId
 {
     public required string Title { get; set; }
     public required string Director { get; set; }
-    public DateTime ReleaseDate { get; set; }
+    public required string ReleaseDate { get; set; }
     public virtual ICollection<Photo> Photos { get; set; }=[];
     public virtual ICollection<Comment> Comments{ get; set; }=[];
     public virtual required Trailer Trailer { get; set; }
