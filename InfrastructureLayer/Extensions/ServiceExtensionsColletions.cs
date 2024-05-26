@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DomainLayer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,7 +11,9 @@ public static class ServiceExtensionsColletions
     { 
         
             services.AddDbContext<TopFilmsDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("TopFilmsViewerDb")));
+            services.AddScoped<ITopFilmsViewer,TopFilmsViewerRepository>();
     }
+
 
 
 }

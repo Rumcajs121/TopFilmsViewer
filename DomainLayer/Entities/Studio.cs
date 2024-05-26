@@ -1,11 +1,10 @@
 ﻿namespace DomainLayer;
 
-public class Studio
+public class Studio:UniqueId
 {
-    public int Id { get; set; }
-    public Guid GuidNormalized { get; set; }
-    public string LogoUri { get; set; }
-    public string StudioName { get; set; }
-    public List<Movie> Movies{ get; set; }=new List<Movie>();
+    public required Guid GuidNormalized { get; set; }
+    public string? LogoUri { get; set; }
+    public required string StudioName { get; set; }
+    public virtual ICollection<Movie> Movies{ get; set; }=new List<Movie>();
     
 }

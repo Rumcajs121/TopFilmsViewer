@@ -1,10 +1,9 @@
 ﻿namespace DomainLayer;
 
-public class Trailer
+public class Trailer:UniqueId
 {
-    public int Id { get; set; }
-    public string Uri { get; set; }
+    public required string Uri { get; set; }
     public int MovieId { get; set; }
-    public Movie Movie { get; set; }
+    public virtual required Movie Movie { get; set; }
 
 }

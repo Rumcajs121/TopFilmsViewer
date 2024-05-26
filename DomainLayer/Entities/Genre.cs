@@ -1,10 +1,9 @@
 ﻿namespace DomainLayer;
 
-public class Genre
+public class Genre:UniqueId
 {
-    public int Id { get; set; }
     public Guid GuidGenre { get; set; }
-    public string Name { get; set; }
-    public List<Movie> Movies { get; set; } = new List<Movie>();
+    public required string  Name { get; set; }
+    public ICollection<Movie> Movies { get; set; } = new List<Movie>();
     
 }

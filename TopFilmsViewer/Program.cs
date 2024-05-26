@@ -1,3 +1,4 @@
+using ApplicationLayer;
 using InfrastructureLayer;
 using Microsoft.EntityFrameworkCore;
 using TopFilmsViewer.Client.Pages;
@@ -11,7 +12,11 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
 
+//Db
 builder.Services.AddInfrastructure(builder.Configuration);
+//DI Services
+builder.Services.AddApplication();
+
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.

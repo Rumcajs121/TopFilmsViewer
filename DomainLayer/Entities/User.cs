@@ -1,15 +1,14 @@
 ﻿namespace DomainLayer;
 
-public class User
+public class User:UniqueId
 {
-    public int Id { get; set; }
-    public string Email { get; set; }
-    public string HashPassword{ get; set; }
-    public string Login { get; set; }
-    public string  Country { get; set; }
-    public string LastName { get; set; }
-    public string FirstName { get; set; }
-    public string Role { get; set; }
-    public List<Comment> Comments { get; set; }=new List<Comment>();
+    public required string Email { get; set; }
+    public required string HashPassword{ get; set; }
+    public required string Login { get; set; }
+    public string?  Country { get; set; }
+    public string? LastName { get; set; }
+    public string? FirstName { get; set; }
+    public string? Role { get; set; }
+    public virtual ICollection<Comment> Comments { get; set; }=[];
 
 }
