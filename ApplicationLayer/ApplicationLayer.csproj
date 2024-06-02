@@ -26,7 +26,6 @@
 
   <ItemGroup>
     <Folder Include="Dto/DtoResponse/" />
-    <Folder Include="Dto/DtoRequest/" />
   </ItemGroup>
 
   <PropertyGroup>
