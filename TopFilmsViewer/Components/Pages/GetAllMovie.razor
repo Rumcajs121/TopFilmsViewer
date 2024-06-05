@@ -1,6 +1,10 @@
-﻿@page "/movies"
+﻿
+@page "/movies"
+@using TopFilmsViewer.Components.Shared
 @inject ITopFilmsViewer TopFilmsViewer;
-@attribute [StreamRendering(true)];
+@rendermode InteractiveServer 
+@* @attribute [StreamRendering(true)]; *@
+
 
 @if(movies==null){
     <span>Loading ... </span>
@@ -12,7 +16,7 @@ else if( movies.Count==0){
         <li>@movie.Title</li>
     }
 }
-
+<CreateNewMovieButton  @rendermode="InteractiveServer" />
 @code {
     List<MainPageMovieDto> movies=[];
     protected override async Task OnInitializedAsync(){

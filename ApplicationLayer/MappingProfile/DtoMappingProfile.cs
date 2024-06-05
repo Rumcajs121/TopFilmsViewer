@@ -12,5 +12,9 @@ public class DtoMappingProfile : Profile
         opt => opt.MapFrom(src =>src.Photos.FirstOrDefault().Uri ))
         .ForMember(dest=>dest.Genre, opt=>opt.MapFrom(src=>src.Genres.Name))
         .ForMember(dest=>dest.Studio, opt=>opt.MapFrom(src=>src.Studios.StudioName));
+
+        CreateMap<CreateMovieDto,Movie>();
+
+        CreateMap<AddPhotosDto,Photo>(); 
     }
 }

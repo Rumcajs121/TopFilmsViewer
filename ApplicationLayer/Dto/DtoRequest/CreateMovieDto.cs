@@ -6,7 +6,8 @@ public class CreateMovieDto
 {
     public required string Title { get; set; }
     public required string Director { get; set; }
-    public required string ReleaseDate { get; set; }
+    public  required string ReleaseDate { get; set; }
+    public required string Description { get; set; }
 
     //Stworzenie dto dla photo do tego formularzu + konfiguracja całego blob storage
     //Create movie zawiera dane + dynamicze dodawanie WASM zdjec (formularz w formularzu)

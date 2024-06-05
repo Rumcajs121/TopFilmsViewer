@@ -1,4 +1,6 @@
-﻿namespace DomainLayer;
+﻿
+
+namespace DomainLayer;
 
 public class Photo :UniqueId
 {
