@@ -16,5 +16,7 @@ public class DtoMappingProfile : Profile
         CreateMap<CreateMovieDto,Movie>();
 
         CreateMap<AddPhotosDto,Photo>(); 
+        CreateMap<AddGenreDto,Genre>();
+        CreateMap<AddStudioDto,Studio>();
     }
 }
