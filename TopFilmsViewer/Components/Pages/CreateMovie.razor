@@ -1,14 +1,7 @@
-@page "/create"
-
-<EditForm Model="createNewMovie" OnSubmit="HandleSubmit">
-    <label>Movie</label>
-    <InputText></InputText>
-</EditForm>
+﻿@page "/createmovie"
+@inject NavigationManager NavigationManager
+@inject TopFilmsDbContext _dbContext
 
 @code {
- List<CreateMovieDto> createNewMovie=[];
-
-async Task HandleSubmit(){
-
-}
+    private CreateMovieDto newMovie=new CreateMovieDto();
 }

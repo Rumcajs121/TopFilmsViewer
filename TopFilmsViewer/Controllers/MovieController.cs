@@ -15,9 +15,5 @@ public class MovieController:ControllerBase
         _serviceFilms = serviceFilms;
     }
 
-    // [HttpPost]
-    // public async Task<ActionResult<Movie>> CreateStudio(AddStudioDto studioDto){
-    //     var addedMovie=_serviceFilms.CreateStudio(studioDto);//zmienic interfejs by przyjmował parametry dto a nie osobych zmiennych
-    //     return Ok(addedMovie);
-    // }
+    //Kontrolery
 }

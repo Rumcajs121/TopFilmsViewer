@@ -11,7 +11,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
-
+builder.Services.AddControllers();
+    
+builder.Services.AddScoped(http=>new HttpClient{
+    BaseAddress=new Uri(builder.Configuration.GetSection("BaseUri").Value!)
+});
 //Db Data
 builder.Services.AddInfrastructure(builder.Configuration);
 //DI Services
@@ -32,7 +36,7 @@ else
 }
 
 app.UseHttpsRedirection();
-
+app.MapControllers();
 app.UseStaticFiles();
 app.UseAntiforgery();
 

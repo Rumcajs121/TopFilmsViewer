@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Compile Include="Interfaces/ITopFilmsViewer.cs" />
+    <Compile Include="Interfaces/ITopFilmsViewerQueries.cs" />
   </ItemGroup>
 
   <ItemGroup>
