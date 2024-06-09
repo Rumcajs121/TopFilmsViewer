@@ -28,6 +28,7 @@ public class TopFilmsViewerRepository : ITopFilmsViewer
                     GuidGenre = Guid.NewGuid()
                 };
 
+<<<<<<< HEAD
                 Genre genre = _mapper.Map<Genre>(newGenre);
                 var dbGenre = _dbContext.Add<Genre>(genre);
                 _dbContext.SaveChanges();
@@ -92,6 +93,16 @@ public class TopFilmsViewerRepository : ITopFilmsViewer
                 throw new Exception("Add studio fail", ex);
             }
         }
+=======
+    public async Task<List<MainPageMovieDto>> GetAllMovies()
+    {
+        var movies = await _dbContext.Movies
+        .Include(m => m.Genres)
+        .Include(m => m.Studios)
+        .Include(m => m.Photos)
+        .ToListAsync();
+        return _mapper.Map<List<Movie>,List<MainPageMovieDto>>(movies);
+>>>>>>> parent of 7de393d (feat(Dto/AddPhotoMethod) I created one method with add new photo in the feature i propably use blob storage for save all photo and must refactoring this code . this method return string Uri for link and was use transaction for my database)
     }
     #endregion
     public async Task<List<MainPageMovieDto>> GetAllMovies()
