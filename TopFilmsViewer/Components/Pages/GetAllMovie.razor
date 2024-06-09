@@ -1,0 +1,25 @@
+﻿
+@page "/movies"
+@using TopFilmsViewer.Components.Shared
+@inject ITopFilmsViewer TopFilmsViewer;
+@rendermode InteractiveServer 
+@* @attribute [StreamRendering(true)]; *@
+
+
+@if(movies==null){
+    <span>Loading ... </span>
+}
+else if( movies.Count==0){
+    <span>No games found </span>
+}else{
+    foreach(var movie in movies){
+        <li>@movie.Title</li>
+    }
+}
+<CreateNewMovieButton  @rendermode="InteractiveServer" />
+@code {
+    List<MainPageMovieDto> movies=[];
+    protected override async Task OnInitializedAsync(){
+        movies= await TopFilmsViewer.GetAllMovies();
+    }
+}
